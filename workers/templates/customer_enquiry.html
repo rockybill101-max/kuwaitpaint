@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Enquiry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        h1 { color: #d35400; }
+        form { background: white; padding: 20px; border-radius: 10px; max-width: 500px; }
+        input, textarea { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { background: #d35400; color: white; padding: 12px 25px; border: none; border-radius: 5px; font-size: 16px; }
+        a { display: inline-block; margin-top: 20px; color: #d35400; }
+    </style>
+</head>
+<body>
+    <h1>🏠 Need Paint Service?</h1>
+    <p>Post your enquiry, we will connect you with the best worker.</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Enquiry</button>
+    </form>
+    <a href="/">← Back to Home</a>
+</body>
+</html>

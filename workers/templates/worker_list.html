@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Workers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        h1 { color: #d35400; }
+        .card { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; max-width: 500px; }
+        .card h3 { margin: 0 0 8px 0; color: #333; }
+        .card p { margin: 4px 0; color: #666; }
+        a { display: inline-block; margin-top: 20px; color: #d35400; }
+    </style>
+</head>
+<body>
+    <h1>📋 Registered Paint Workers</h1>
+
+    {% for worker in workers %}
+        <div class="card">
+            <h3>{{ worker.name }}</h3>
+            <p><strong>Area:</strong> {{ worker.area }}</p>
+            <p><strong>Experience:</strong> {{ worker.experience }}</p>
+            <p><strong>Phone:</strong> {{ worker.phone }}</p>
+        </div>
+    {% empty %}
+        <p>No workers registered yet.</p>
+    {% endfor %}
+
+    <a href="/">← Back to Home</a>
+</body>
+</html>
